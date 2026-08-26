@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Aggregate Services LLC — Texas Aggregate & Material Hauling</title>
+<meta name="description" content="Elite Aggregate Services LLC delivers crushed stone, sand, gravel, and base material across Texas. Reliable aggregate supply and hauling built on Texas grit.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Saira+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,600;1,700;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --black:#0a0a0b;
+  --panel:#141416;
+  --steel:#c7c9cc;
+  --steel-dim:#8a8d92;
+  --red:#c8102e;
+  --red-deep:#8f0a1f;
+  --blue:#0a2a5e;
+  --white:#f4f5f6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:'Barlow',system-ui,sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+
+/* Utility display face — matches the AGGREGATE block */
+.stencil{
+  font-family:'Saira Condensed',sans-serif;
+  font-weight:800;
+  font-style:italic;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+/* Script face — matches "Elite" */
+.script{ font-family:'Great Vibes',cursive; font-weight:400; }
+
+/* ---------- NAV ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 5vw;
+  background:linear-gradient(to bottom,rgba(10,10,11,.96),rgba(10,10,11,.75));
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(199,201,204,.08);
+}
+.brand{display:flex;align-items:baseline;gap:.4rem}
+.brand .script{font-size:1.9rem;color:var(--white);line-height:1}
+.brand .tag{font-family:'Saira Condensed';font-weight:800;font-style:italic;text-transform:uppercase;font-size:.85rem;letter-spacing:.08em;color:var(--steel-dim)}
+nav ul{display:flex;gap:2rem;list-style:none}
+nav a{
+  font-family:'Saira Condensed';font-weight:700;font-style:italic;
+  text-transform:uppercase;letter-spacing:.06em;font-size:.95rem;color:var(--steel);
+  transition:color .2s;
+}
+nav a:hover{color:var(--white)}
+.nav-toggle{display:none;background:none;border:0;color:var(--white);font-size:1.6rem;cursor:pointer}
+@media(max-width:760px){
+  nav ul{
+    position:fixed;top:64px;right:0;flex-direction:column;gap:0;
+    background:var(--panel);width:60vw;height:100vh;padding:2rem;
+    transform:translateX(100%);transition:transform .3s;border-left:1px solid rgba(199,201,204,.1);
+  }
+  nav ul.open{transform:translateX(0)}
+  nav li{padding:1rem 0;border-bottom:1px solid rgba(199,201,204,.08)}
+  .nav-toggle{display:block}
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:120px 5vw 80px;position:relative;
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(40,41,44,.9) 0%, var(--black) 70%);
+}
+/* aggregate grain texture */
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(199,201,204,.05) 1px, transparent 1px);
+  background-size:7px 7px;opacity:.6;pointer-events:none;
+}
+.hero img{
+  width:min(560px,86vw);height:auto;position:relative;z-index:2;
+  filter:drop-shadow(0 12px 40px rgba(0,0,0,.7));
+  animation:rise 1s ease-out both;
+}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero h1{
+  position:relative;z-index:2;margin-top:1.5rem;
+  font-family:'Saira Condensed';font-weight:700;font-style:italic;
+  text-transform:uppercase;letter-spacing:.05em;
+  font-size:clamp(1.1rem,3vw,1.6rem);color:var(--steel);
+  max-width:620px;
+}
+.hero h1 .accent{color:var(--red)}
+.hero .cta-row{margin-top:2.2rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;z-index:2;position:relative}
+.btn{
+  font-family:'Saira Condensed';font-weight:800;font-style:italic;
+  text-transform:uppercase;letter-spacing:.06em;font-size:1rem;
+  padding:.85rem 2rem;border:2px solid var(--red);cursor:pointer;transition:.2s;
+}
+.btn-primary{background:var(--red);color:var(--white)}
+.btn-primary:hover{background:var(--red-deep);border-color:var(--red-deep)}
+.btn-ghost{background:transparent;color:var(--white)}
+.btn-ghost:hover{background:rgba(255,255,255,.06)}
+
+/* red rule divider echoing the logo */
+.rule{height:3px;width:100%;background:linear-gradient(90deg,transparent,var(--red) 20%,var(--red) 80%,transparent);margin:0}
+
+/* ---------- SECTIONS ---------- */
+section{padding:90px 5vw}
+.eyebrow{
+  font-family:'Saira Condensed';font-weight:700;font-style:italic;text-transform:uppercase;
+  letter-spacing:.14em;font-size:.9rem;color:var(--red);margin-bottom:.6rem;
+}
+.h2{
+  font-family:'Saira Condensed';font-weight:800;font-style:italic;text-transform:uppercase;
+  letter-spacing:.03em;font-size:clamp(2rem,5vw,3.2rem);line-height:1;color:var(--white);
+  margin-bottom:1.4rem;
+}
+.lead{max-width:640px;color:var(--steel);font-size:1.08rem}
+
+/* materials grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.4rem;margin-top:3rem}
+.card{
+  background:var(--panel);border:1px solid rgba(199,201,204,.1);
+  padding:1.8rem;position:relative;overflow:hidden;transition:.25s;
+}
+.card::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--red);transition:width .3s}
+.card:hover{transform:translateY(-4px);border-color:rgba(199,201,204,.25)}
+.card:hover::after{width:100%}
+.card .num{font-family:'Saira Condensed';font-weight:800;font-style:italic;font-size:2.6rem;color:rgba(199,201,204,.18);line-height:1}
+.card h3{font-family:'Saira Condensed';font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.03em;font-size:1.35rem;margin:.3rem 0 .6rem}
+.card p{color:var(--steel-dim);font-size:.98rem}
+
+/* stats band */
+.band{background:var(--panel);border-top:1px solid rgba(199,201,204,.1);border-bottom:1px solid rgba(199,201,204,.1)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2rem;text-align:center}
+.stat .big{font-family:'Saira Condensed';font-weight:800;font-style:italic;font-size:clamp(2.6rem,6vw,3.8rem);color:var(--white);line-height:1}
+.stat .big span{color:var(--red)}
+.stat .lbl{font-family:'Saira Condensed';font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.85rem;color:var(--steel-dim);margin-top:.4rem}
+
+/* about split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+@media(max-width:800px){.split{grid-template-columns:1fr}}
+.tx-badge{display:flex;align-items:center;justify-content:center}
+.tx-badge svg{width:min(320px,70vw);height:auto;filter:drop-shadow(0 8px 24px rgba(0,0,0,.6))}
+
+/* contact */
+.contact{text-align:center}
+.contact .lead{margin:0 auto}
+.field-row{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:2.4rem}
+.contact-btn{display:inline-flex;align-items:center;gap:.6rem}
+
+/* footer */
+footer{padding:40px 5vw;text-align:center;border-top:1px solid rgba(199,201,204,.1);color:var(--steel-dim);font-size:.9rem}
+footer .script{font-size:1.5rem;color:var(--white);display:inline-block;margin-bottom:.4rem}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <span class="script">Elite</span>
+    <span class="tag">Aggregate</span>
+  </div>
+  <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+  <nav>
+    <ul id="menu">
+      <li><a href="#materials">Materials</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <img src="logo.png" alt="Elite Aggregate Services LLC logo">
+  <h1>Crushed stone, sand & base material — hauled <span class="accent">on time,</span> across Texas.</h1>
+  <div class="cta-row">
+    <a href="#contact" class="btn btn-primary">Request a Quote</a>
+    <a href="#materials" class="btn btn-ghost">View Materials</a>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- MATERIALS -->
+<section id="materials">
+  <p class="eyebrow reveal">What we move</p>
+  <h2 class="h2 reveal">Aggregate Materials</h2>
+  <p class="lead reveal">From foundation base to finish rock, we supply and deliver the material your job runs on — spec'd right and dropped where you need it.</p>
+  <div class="grid">
+    <div class="card reveal"><div class="num">01</div><h3>Crushed Stone</h3><p>Clean, spec-graded limestone and granite in a full range of sizes for road base, concrete, and drainage.</p></div>
+    <div class="card reveal"><div class="num">02</div><h3>Sand &amp; Gravel</h3><p>Washed concrete sand, mason sand, and pea gravel sourced from reliable Texas pits.</p></div>
+    <div class="card reveal"><div class="num">03</div><h3>Base &amp; Fill</h3><p>Flex base, caliche, and select fill for pads, driveways, and site prep — bulk quantities, no delays.</p></div>
+    <div class="card reveal"><div class="num">04</div><h3>Riprap &amp; Rock</h3><p>Erosion control rock and decorative landscape stone for jobs large and small.</p></div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<section class="band">
+  <div class="stats">
+    <div class="stat reveal"><div class="big"><span>24</span>/7</div><div class="lbl">Dispatch &amp; Hauling</div></div>
+    <div class="stat reveal"><div class="big">100<span>%</span></div><div class="lbl">Texas Owned</div></div>
+    <div class="stat reveal"><div class="big">50<span>+</span></div><div class="lbl">Mile Delivery Radius</div></div>
+    <div class="stat reveal"><div class="big">0<span>.</span></div><div class="lbl">Excuses On Delivery</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <p class="eyebrow reveal">How we work</p>
+  <h2 class="h2 reveal">Supply &amp; Hauling Services</h2>
+  <div class="grid">
+    <div class="card reveal"><h3>Material Supply</h3><p>Consistent access to quality aggregate at competitive rates, whether you need a single load or a steady supply through your project.</p></div>
+    <div class="card reveal"><h3>Bulk Hauling</h3><p>End dumps and belly dumps ready to move tonnage to your site, jobsite-to-jobsite, on a schedule you can build around.</p></div>
+    <div class="card reveal"><h3>Site Delivery</h3><p>Spotted exactly where you need it. Our drivers know how to place material to keep your crew moving.</p></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="band">
+  <div class="split">
+    <div>
+      <p class="eyebrow reveal">Who we are</p>
+      <h2 class="h2 reveal">Built On Texas Grit</h2>
+      <p class="lead reveal">Elite Aggregate Services LLC is a Texas-owned operation that treats every load like our name is on it — because it is. We keep it simple: quality material, honest pricing, and delivery you can count on. When you call, you talk to people who understand the jobsite, not a call center.</p>
+    </div>
+    <div class="tx-badge reveal">
+      <!-- Texas flag map, matching the logo emblem -->
+      <svg viewBox="0 0 200 190" xmlns="http://www.w3.org/2000/svg" aria-label="Texas">
+        <defs><clipPath id="tx">
+          <path d="M40 30 L120 30 L120 45 L150 45 L150 60 L175 62 L178 88 L168 100 L172 120 L150 128 L140 150 L128 168 L118 150 L110 158 L100 150 L96 120 L70 118 L66 100 L44 96 L40 70 Z"/>
+        </clipPath></defs>
+        <g clip-path="url(#tx)">
+          <rect x="30" y="20" width="55" height="160" fill="#0a2a5e"/>
+          <rect x="85" y="20" width="110" height="80" fill="#f4f5f6"/>
+          <rect x="85" y="100" width="110" height="80" fill="#c8102e"/>
+          <polygon points="57,75 63,92 48,81 66,81 51,92" fill="#f4f5f6"/>
+        </g>
+        <path d="M40 30 L120 30 L120 45 L150 45 L150 60 L175 62 L178 88 L168 100 L172 120 L150 128 L140 150 L128 168 L118 150 L110 158 L100 150 L96 120 L70 118 L66 100 L44 96 L40 70 Z" fill="none" stroke="#c7c9cc" stroke-width="3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <p class="eyebrow reveal">Get moving</p>
+  <h2 class="h2 reveal">Request A Quote</h2>
+  <p class="lead reveal">Tell us the material, the tonnage, and the drop site. We'll get you a number and a delivery window — fast.</p>
+  <div class="field-row reveal">
+    <a href="tel:+10000000000" class="btn btn-primary contact-btn">Call Dispatch</a>
+    <a href="mailto:info@eliteaggregate.example" class="btn btn-ghost contact-btn">Email Us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="script">Elite Aggregate Services</div>
+  <p>LLC &bull; Proudly serving Texas &bull; &copy; <span id="yr"></span> Elite Aggregate Services LLC</p>
+</footer>
+
+<script>
+// mobile menu
+const toggle=document.querySelector('.nav-toggle');
+const menu=document.getElementById('menu');
+toggle.addEventListener('click',()=>menu.classList.toggle('open'));
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+// year
+document.getElementById('yr').textContent=new Date().getFullYear();
+// reveal on scroll
+const obs=new IntersectionObserver((e)=>e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('in')}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
